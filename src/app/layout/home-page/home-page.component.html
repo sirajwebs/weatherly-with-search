@@ -1,0 +1,8 @@
+<div class="content">
+  <div class="cities-grid-list">
+    <div class="cities-grid-tile" *ngFor="let city of cities" (click)="forecastCity(city)">
+      <app-weather [location]="city"></app-weather>
+      <mat-icon class="delete" (click)="deleteCity(city)">cancel</mat-icon>
+    </div>
+  </div>
+</div>

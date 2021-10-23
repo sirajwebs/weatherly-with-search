@@ -1,0 +1,60 @@
+@import "../../../styles.scss";
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+
+.cities-grid-list {
+  @extend .flex;
+
+  margin: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.cities-grid-tile {
+  @extend .card;
+  position: relative;
+  padding: 20px;
+  margin: 20px;
+  min-width: 150px;
+  max-width: 150px;
+  cursor: pointer;
+  transition: 0.3s;
+  
+  &:hover {
+    background: linear-gradient(52deg, #135db7, transparent);
+  }
+
+  &:hover .delete {
+    display: block;
+  }
+
+  .delete {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    font-size: 20px;
+    color: #333;
+    display: none;
+    transition: 0.3s;
+    
+    &:hover {
+      color: #000;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    padding: 10px;
+  }
+
+  .cities-grid-tile {
+    .delete {
+      display: block;
+    }
+  }
+}

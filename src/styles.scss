@@ -1,0 +1,87 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+* {
+  line-height: initial;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+  font-family: "Roboto", sans-serif;
+}
+
+.bar-bg-color {
+  background: linear-gradient(8deg, #074da2, #008465);
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  box-shadow: cadetblue 0px 0px 20px -2px;
+  background: linear-gradient(52deg, #4d84c7, transparent);
+  border-radius: 25px;
+  text-shadow: 1px 1px 3px #7b7b7b;
+}
+
+.underline-title {
+  border: 2px solid #fff;
+  border-radius: 50px;
+  margin-top: 5px;
+  width: 70px;
+}
+
+.blue-snackbar {
+  @extend .bar-bg-color;
+  button {
+    color: white;
+  }
+}
+
+.red-snackbar {
+  @extend .blue-snackbar;
+  background: linear-gradient(8deg, #a20707, #940b4b);
+}
+
+/* Scroll-bar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 70px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(30, 161, 111);
+  border-radius: 70px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(34, 105, 84);
+  border-radius: 70px;
+}
+/* Scroll-bar */

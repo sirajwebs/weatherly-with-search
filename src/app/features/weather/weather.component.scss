@@ -1,0 +1,48 @@
+@import "../../../styles.scss";
+
+.weather-card {
+  @extend .flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  min-height: 270px;
+  color: white;
+  text-align: center;
+
+  .name {
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: large;
+    color: black;
+    word-break: break-all;
+  }
+
+  .temp {
+    font-size: xxx-large;
+  }
+
+  .type {
+    padding-bottom: 15px;
+    font-size: medium;
+  }
+
+  .details {
+    @extend .flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: x-small;
+
+    i {
+      text-transform: lowercase;
+    }
+  }
+
+  .view {
+    padding-top: 15px;
+    @extend .flex;
+    font-size: x-small;
+  }
+
+  .error {
+    text-transform: none;
+  }
+}

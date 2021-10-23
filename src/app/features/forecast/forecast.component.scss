@@ -1,0 +1,178 @@
+@import "../../../styles.scss";
+@import "../../app.component.scss";
+
+.flex-column {
+  @extend .flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.flex-row {
+  @extend .flex;
+  flex-direction: row;
+  width: 100%;
+  height: 220px;
+}
+
+.flex-item {
+  @extend .flex;
+  margin: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.forecast-container {
+  @extend .flex;
+  align-items: flex-start;
+  position: relative;
+  padding: 50px;
+
+  .back-btn {
+    @extend .flex;
+    justify-content: flex-start;
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    font-size: x-large;
+    font-weight: 100;
+    cursor: pointer;
+    color: white;
+
+    button {
+      @extend .flex;
+      width: 40px;
+      height: 40px;
+    }
+
+    span {
+      padding-left: 3px;
+    }
+  }
+}
+
+.forecast-card {
+  @extend .card;
+  color: white;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  min-width: 70%;
+  max-width: 70%;
+  min-height: 400px;
+
+  .weather {
+    flex-direction: column;
+  }
+
+  .name {
+    letter-spacing: 3px;
+    font-size: xx-large;
+    flex-direction: column;
+  }
+
+  .temp {
+    padding-bottom: 5px;
+    font-size: 70px;
+  }
+
+  .type {
+    padding-bottom: 20px;
+    font-size: large;
+  }
+
+  .error {
+    text-transform: none;
+  }
+}
+
+.details {
+  @extend .flex;
+  font-size: smaller;
+
+  i {
+    text-transform: lowercase;
+  }
+}
+
+.divider {
+  border: 1px solid #fff;
+  margin: 0 30px;
+  height: 30px;
+  opacity: 0.5;
+}
+
+.hourly-forecast {
+  justify-content: flex-start;
+  width: 95%;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  margin-top: 0;
+}
+
+.per-hour {
+  @extend .flex;
+  flex-direction: column;
+  padding: 20px 5px;
+  margin: 0px 5px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  height: 200px;
+
+  .date {
+    font-size: large;
+  }
+
+  .time,
+  .w-type {
+    font-size: smaller;
+  }
+
+  .temp {
+    font-size: xx-large;
+  }
+}
+
+.city-bg {
+  background: linear-gradient(270deg, #59d08e, transparent);
+  position: relative;
+
+  .bg-img {
+    @extend .bg-img;
+    z-index: auto;
+    width: 350px;
+    opacity: 0.5;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .forecast-container {
+    @extend .flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px;
+
+    .back-btn {
+      position: relative;
+      left: 0;
+      top: 0;
+      padding: 10px 0 0 0;
+    }
+  }
+
+  .forecast-card {
+    margin-top: 20px;
+    max-width: 95%;
+    height: auto;
+  }
+
+  .city-bg {
+    flex-direction: column-reverse;
+    height: auto;
+
+    .bg-img {
+      width: 100%;
+      z-index: -1;
+      opacity: 1;
+    }
+  }
+}

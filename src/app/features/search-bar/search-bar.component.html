@@ -1,0 +1,11 @@
+<mat-form-field class="form-field" floatLabel="never">
+  <input matInput placeholder="Add City" [formControl]="locationControl" type="text" name="location"
+    autocomplete="off" (keyup.enter)="searchAndAddCity()">
+  <button mat-button *ngIf="locationControl.value" matSuffix mat-icon-button aria-label="Clear"
+    (click)="locationControl.setValue('')">
+    <mat-icon>close</mat-icon>
+  </button>
+  <button mat-button matSuffix mat-icon-button aria-label="Add City" (click)="searchAndAddCity()">
+    <mat-icon>search</mat-icon>
+  </button>
+</mat-form-field>

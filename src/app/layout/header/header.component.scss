@@ -1,0 +1,43 @@
+@import "../../../styles.scss";
+
+:host ::ng-deep .mat-toolbar.mat-primary {
+  @extend .bar-bg-color;
+}
+
+.header-bar {
+  @extend .flex;
+  justify-content: space-between;
+  height: 65px;
+  padding: 0 20px;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+}
+
+.logo {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: x-large;
+
+  img {
+    margin-right: 10px;
+    height: 40px;
+  }
+}
+
+.today-text {
+  text-transform: capitalize;
+  font-weight: 100;
+}
+
+@media screen and (max-width: 768px) {
+  .today-text {
+    display: none;
+  }
+
+  .header-bar {
+    padding: 5px;
+  }
+}

@@ -1,0 +1,56 @@
+<div class="forecast-container">
+  <div class="back-btn" (click)="back()">
+    <button mat-fab color="primary" aria-label="Back">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span>Back</span>
+  </div>
+  <div class="flex-column forecast-card">
+    <ng-container *ngIf="apiLoading$ | async">
+      <mat-spinner diameter="30"></mat-spinner><br />
+      loading...
+    </ng-container>
+    <ng-container *ngIf="apiError$ | async">
+      <div class="flex-item flex-column error">
+        <mat-icon>error_outline</mat-icon>
+        <br /> Failed to get weather details for {{ location }}.
+      </div>
+    </ng-container>
+    <ng-container *ngIf="weatherForecast$ | async as weatherForecast">
+      <div class="flex-item flex-row city-bg">
+        <img class="bg-img" src="../../../assets/images/city.png">
+        <div class="flex-item weather">
+          <span class="temp">{{ weatherForecast[0].main.temp | number:'1.0-0' }}°c</span>
+          <span class="type">{{ weatherForecast[0].weather[0].main }}</span>
+          <div class="details">
+            <span>
+              {{ weatherForecast[0].main.humidity }}%
+              <br />
+              Humidity
+            </span>
+            <span class="divider"></span>
+            <span>
+              {{ weatherForecast[0].wind.speed }}
+              <i>m/s</i>
+              <br />
+              Wind
+            </span>
+          </div>
+        </div>
+        <div class="flex-item name">
+          <span>{{ weatherForecast[0].name }}</span>
+          <i class="underline-title"></i>
+        </div>
+      </div>
+      <div class="flex-item hourly-forecast">
+        <div *ngFor="let loc of weatherForecast[1].list" class="per-hour">
+          <span class="date"> {{ loc.dt*1000 | date:'MMM d' }} </span>
+          <span class="time"> {{ loc.dt*1000 | date:'h:mm a' }} </span>
+          <img [src]="getIcon(loc.weather[0].icon)">
+          <span class="temp"> {{ loc.main.temp | number:'1.0-0' }}°C </span>
+          <span class="w-type"> {{ loc.weather[0].main }} </span>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
