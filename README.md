@@ -1,4 +1,4 @@
-# Weatherly <a style="font-size:20px" href="https://weatherly-test-bb.web.app/">(live demo)</a>
+# Weatherly <a style="font-size:20px" href="https://weatherly-city.web.app/">(live demo)</a>
 
 <p align="center">
     <img src="src/assets/homepage.jpg" width="390" height="auto">
